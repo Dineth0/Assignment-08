@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+      section{
+         display: flex;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      #main{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px solid black;
+      }
+      img{
+
+        width: 100px;
+        height: 100px;
+
+        margin: 10px;
+      }
+      .letter{
+        text-align: right;
+      }
+
+    </style>
+</head>
+<body>
+      <section>
+            <div id="main">
+                <div class="item">
+                    <div class="letter">A</div>
+                    <img src="assest/images/Rabbit.gif">
+                </div>
+
+                <div  class="item">
+                  <div class="letter">B</div>
+                  <img src="assest/images/Rabbit.gif">
+                </div>
+
+                <div  class="item">
+                  <div class="letter">C</div>
+                  <img src="assest/images/Rabbit.gif">
+                </div>
+
+                <div  class="item">
+                  <div class="letter">D</div>
+                  <img src="assest/images/Rabbit.gif">
+                </div>
+
+                <div  class="item">
+                  <div class="letter">E</div>
+                  <img src="assest/images/Rabbit.gif">
+                </div>
+
+                <div  class="item">
+                  <div class="letter">F</div>
+                  <img src="assest/images/Rabbit.gif">
+                </div>
+            </div>
+            <div id = "cave">
+                <img src="assest/images/cave.gif"></img>
+            </div>
+      </section>
+
+<script src="lib/jquery-3.7.1.min.js"></script>
+
+<script>
+  let data = ['A', 'B', 'C', 'D', 'E','F'];
+
+  const updateLetters = () => {
+    let lastLetter = data.pop();
+    data.unshift(lastLetter);
+
+
+
+    document.getElementsByClassName('letter')[0].innerText = data[0];
+    document.getElementsByClassName('letter')[1].innerText = data[1];
+    document.getElementsByClassName('letter')[2].innerText = data[2];
+    document.getElementsByClassName('letter')[3].innerText = data[3];
+    document.getElementsByClassName('letter')[4].innerText = data[4];
+    document.getElementsByClassName('letter')[5].innerText = data[5];
+  }
+  setInterval(updateLetters,1000);
+</script>
+</body>
+</html>
